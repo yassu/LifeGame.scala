@@ -25,11 +25,15 @@ case class Board(cells: List[List[Cell]]) {
 
   def size: (Int, Int) = (this.cells(0).size, this.cells.size)
 
-    // def numberOfAlivedNeighborCells(y: Int, x: Int): Int =
-    //   Set(
-    //     (x - 1, y - 1), (x, y - 1), (x + 1, y - 1),
-    //     (x - 1, y), (x + 1, y),
-    //     (x - 1, y + 1), (x, y + 1), (x + 1, y + 1)).
-    //   filter(t =>
-    //     t._1 > 0 && t._1 < )
+  def numberOfAlivedNeighborCells(y: Int, x: Int): Int = {
+    Set(
+      (x - 1, y - 1), (x, y - 1), (x + 1, y - 1),
+      (x - 1, y), (x + 1, y),
+      (x - 1, y + 1), (x, y + 1), (x + 1, y + 1)).
+    filter(t =>
+      t._1 >= 0 && t._1 < size._1 &&
+      t._2 >= 0 && t._2 < size._2 &&
+      cells(t._2)(t._1).isAlive
+      ).size
+  }
 }
