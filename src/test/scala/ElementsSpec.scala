@@ -69,7 +69,7 @@ class BoardSpec extends FunSpec {
     }
   }
 
-  describe("toString") {
+  it("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),
         List(Cell(Black), Cell(White), Cell(White)),
