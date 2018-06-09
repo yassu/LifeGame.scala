@@ -22,4 +22,14 @@ case class Board(cells: List[List[Cell]]) {
     (for (y <- (0 until cells.length)) yield (
       for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar
     ).mkString("")).mkString("\n")
+
+  def size: (Int, Int) = (this.cells(0).size, this.cells.size)
+
+    // def numberOfAlivedNeighborCells(y: Int, x: Int): Int =
+    //   Set(
+    //     (x - 1, y - 1), (x, y - 1), (x + 1, y - 1),
+    //     (x - 1, y), (x + 1, y),
+    //     (x - 1, y + 1), (x, y + 1), (x + 1, y + 1)).
+    //   filter(t =>
+    //     t._1 > 0 && t._1 < )
 }

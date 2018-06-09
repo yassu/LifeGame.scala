@@ -47,6 +47,23 @@ class BoardSpec extends FunSpec {
     )
   }
 
+  describe("size") {
+    val board = Board(List(
+      List(Cell(Black), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White))
+    ))
+    assert(board.size == (3, 2))
+  }
+
+  // describe("numberOfAlivedNeighborCells") {
+  //   val board = Board(List(
+  //     List(Cell(Black), Cell(Black), Cell(White)),
+  //     List(Cell(Black), Cell(White), Cell(White)),
+  //     List(Cell(White), Cell(White), Cell(White))
+  //   ))
+  //   assert(board.numberOfAlivedNeighborCells == 1)
+  // }
+
   describe("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),
