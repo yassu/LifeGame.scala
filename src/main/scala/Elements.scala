@@ -18,11 +18,6 @@ case class Cell(color: Color) {
 }
 
 case class Board(cells: List[List[Cell]]) {
-  override def toString: String =
-    (for (y <- (0 until cells.length)) yield (
-      for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar
-    ).mkString("")).mkString("\n")
-
   def size: (Int, Int) = (this.cells(0).size, this.cells.size)
 
   def numberOfAlivedNeighborCells(y: Int, x: Int): Int = {
@@ -36,4 +31,10 @@ case class Board(cells: List[List[Cell]]) {
       cells(t._2)(t._1).isAlive
       ).size
   }
+
+  override def toString: String =
+    (for (y <- (0 until cells.length)) yield (
+      for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar
+    ).mkString("")).mkString("\n")
+
 }
