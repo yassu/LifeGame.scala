@@ -11,3 +11,5 @@ case class Cell(color: Color) {
     case White => '□'
   }
 }
+
+case class Board(aliveIndexes: List[(Int, Int)], size: (Int, Int))

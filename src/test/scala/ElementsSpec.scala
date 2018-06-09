@@ -31,3 +31,9 @@ class CellSepc extends FunSpec {
     }
   }
 }
+
+class BoardSpec extends FunSpec {
+  it("Board instance should be initialized.") {
+    Board(List((1, 2), (2, 3)), size=(10, 10))
+  }
+}
