@@ -69,6 +69,17 @@ class BoardSpec extends FunSpec {
     }
   }
 
+  describe("nextCell") {
+    val board1 = Board(List(
+      List(Cell(Black), Cell(Black), Cell(White)),
+      List(Cell(Black), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White))
+    ))
+    it("birth") {
+      assert(board1.nextCell(1, 0) == Cell(White))
+    }
+  }
+
   it("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),

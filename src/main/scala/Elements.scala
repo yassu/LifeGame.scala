@@ -11,13 +11,16 @@ case class Cell(color: Color) {
     case White => '□'
   }
 
-  def isAlive = color match {
+  def isAlive: Boolean = color match {
     case Black => false
     case White => true
   }
+
+  def isDead: Boolean = ! isAlive
 }
 
 case class Board(cells: List[List[Cell]]) {
+  def getCell(y: Int, x: Int): Cell = cells(y)(x)
   def size: (Int, Int) = (this.cells(0).size, this.cells.size)
 
   def numberOfAlivedNeighborCells(y: Int, x: Int): Int = {
@@ -31,6 +34,10 @@ case class Board(cells: List[List[Cell]]) {
       cells(t._2)(t._1).isAlive
       ).size
   }
+
+  def nextCell(y: Int, x: Int) =
+    if(cells(y)(x).isDead && numberOfAlivedNeighborCells(y, x) == 3) Cell(White)
+    else Cell(Black)
 
   override def toString: String =
     (for (y <- (0 until cells.length)) yield (
