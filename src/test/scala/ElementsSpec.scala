@@ -30,10 +30,32 @@ class CellSepc extends FunSpec {
       assert(Cell(Black).colorChar == '■')
     }
   }
+  describe("isAlive") {
+    it("If color is White, isAlive is True.") {
+      assert(Cell(White).isAlive)
+    }
+  }
 }
 
 class BoardSpec extends FunSpec {
   it("Board instance should be initialized.") {
-    Board(List((1, 2), (2, 3)), size=(10, 10))
+    Board(List(
+        List(Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White))
+      )
+    )
+  }
+
+  describe("toString") {
+    assert(Board(List(
+        List(Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White))
+      )).toString ==
+      "■■□\n" +
+      "■□□\n" +
+      "□□□"
+    )
   }
 }

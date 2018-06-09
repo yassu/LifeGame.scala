@@ -10,6 +10,16 @@ case class Cell(color: Color) {
     case Black => '■'
     case White => '□'
   }
+
+  def isAlive = color match {
+    case Black => false
+    case White => true
+  }
 }
 
-case class Board(aliveIndexes: List[(Int, Int)], size: (Int, Int))
+case class Board(cells: List[List[Cell]]) {
+  override def toString: String =
+    (for (y <- (0 until cells.length)) yield (
+      for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar
+    ).mkString("")).mkString("\n")
+}
