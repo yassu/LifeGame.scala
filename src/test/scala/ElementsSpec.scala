@@ -19,10 +19,15 @@ class ColorSpec extends FunSpec {
 }
 
 class CellSepc extends FunSpec {
-  describe("Cell of Black object should be initialized.") {
+  it("Cell of Black object should be initialized.") {
     Cell(Black)
   }
-  describe("Char of White Cell should be □.") {
-    assert(Cell(White).colorChar == '□')
+  describe("Test for Char of White Cell") {
+    it("Char of White Cell should be □.") {
+      assert(Cell(White).colorChar == '□')
+    }
+    it("Char of Black Cell should be ■.") {
+      assert(Cell(Black).colorChar == '■')
+    }
   }
 }
