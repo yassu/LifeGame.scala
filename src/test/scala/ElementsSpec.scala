@@ -75,8 +75,18 @@ class BoardSpec extends FunSpec {
       List(Cell(Black), Cell(White), Cell(White)),
       List(Cell(White), Cell(White), Cell(White))
     ))
+    val board2 = Board(List(
+      List(Cell(White), Cell(White), Cell(White), Cell(White)),
+      List(Cell(White), Cell(Black), Cell(Black), Cell(Black))
+    ))
     it("birth") {
       assert(board1.nextCell(1, 0) == Cell(White))
+    }
+    it("existence2") {
+      assert(board2.nextCell(0, 0) == Cell(White))
+    }
+    it("existence3") {
+      assert(board1.nextCell(2, 2) == Cell(White))
     }
   }
 
