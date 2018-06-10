@@ -3,14 +3,14 @@ package lifegame.sampleboards
 import lifegame.elements.{Board, Cell, White, Black}
 
 object SampleBoards {
-  def blockBoard: Board = Board(List(
+  val blockBoard = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White))
   ))
 
-  def beehive: Board = Board(List(
+  val beehive = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(White), Cell(White), Cell(Black), Cell(White)),
@@ -18,7 +18,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def boat: Board = Board(List(
+  val boat = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(White), Cell(Black), Cell(White)),
@@ -26,7 +26,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def ship: Board = Board(List(
+  val ship = Board(List(
       List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
       List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White)),
       List(Cell(White), Cell(Black), Cell(White), Cell(Black), Cell(White)),
@@ -34,7 +34,7 @@ object SampleBoards {
       List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     ))
 
-  def pond: Board = Board(List(
+  val pond = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(White), Cell(White), Cell(Black), Cell(White)),
@@ -43,7 +43,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def blinker: Board = Board(List(
+  val blinker = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White)),
@@ -51,7 +51,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def toad: Board = Board(List(
+  val toad = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White)),
@@ -60,7 +60,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def beacon: Board = Board(List(
+  val beacon = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White), Cell(White)),
@@ -69,7 +69,7 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def clock: Board = Board(List(
+  val clock = Board(List(
     List(Cell(White), Cell(Black), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(Black), Cell(Black)),
     List(Cell(Black), Cell(Black), Cell(White), Cell(White)),
