@@ -72,7 +72,6 @@ class BoardSpec extends FunSpec {
       List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
       List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     ))
-    println(resultBoard)
     assert(board.putBoard(blockBoard, (1, 2)) == resultBoard)
   }
 
