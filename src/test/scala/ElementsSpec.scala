@@ -188,12 +188,12 @@ class BoardSpec extends FunSpec {
     }
 
     it("blinkerBoard has zero cycle with maxCycleCount = 0") {
-      assert(SampleBoards.blinkerBoard.cycle(0) == 0)
+      assert(SampleBoards.blinker.cycle(0) == 0)
     }
     it("compute cycle of blinkerBoard") {
-      var board = SampleBoards.blinkerBoard
-      assert(SampleBoards.blinkerBoard.cycle(1) == 0)
-      assert(SampleBoards.blinkerBoard.cycle(2) == 2)
+      var board = SampleBoards.blinker
+      assert(SampleBoards.blinker.cycle(1) == 0)
+      assert(SampleBoards.blinker.cycle(2) == 2)
     }
   }
 

@@ -26,11 +26,29 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
-  def blinkerBoard: Board = Board(List(
+  def ship: Board = Board(List(
+      List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White)),
+      List(Cell(White), Cell(Black), Cell(White), Cell(Black), Cell(White)),
+      List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    ))
+
+  def pond: Board = Board(List(
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+    List(Cell(White), Cell(Black), Cell(White), Cell(White), Cell(Black), Cell(White)),
+    List(Cell(White), Cell(Black), Cell(White), Cell(White), Cell(Black), Cell(White)),
+    List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+  ))
+
+  def blinker: Board = Board(List(
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
+
 }
