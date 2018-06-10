@@ -197,6 +197,12 @@ class BoardSpec extends FunSpec {
     }
   }
 
+  describe("isFixed") {
+    it("compute blockBoard.isFixed") {
+      assert(SampleBoards.blockBoard.isFixed())
+    }
+  }
+
   it("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),

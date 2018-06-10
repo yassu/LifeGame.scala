@@ -91,6 +91,9 @@ case class Board(cells: List[List[Cell]]) {
     0
   }
 
+  def isFixed(maxCycleCount: Int = 10): Boolean =
+    this.cycle(maxCycleCount) == 1
+
   override def toString: String =
     (for (y <- (0 until cells.length)) yield (
       for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar
