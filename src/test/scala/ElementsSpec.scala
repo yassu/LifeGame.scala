@@ -70,23 +70,28 @@ class BoardSpec extends FunSpec {
   }
 
   describe("nextCell") {
-    val board1 = Board(List(
-      List(Cell(Black), Cell(Black), Cell(White)),
-      List(Cell(Black), Cell(White), Cell(White)),
-      List(Cell(White), Cell(White), Cell(White))
-    ))
-    val board2 = Board(List(
-      List(Cell(White), Cell(White), Cell(White), Cell(White)),
-      List(Cell(White), Cell(Black), Cell(Black), Cell(Black))
-    ))
     it("birth") {
-      assert(board1.nextCell(1, 0) == Cell(White))
+      val board = Board(List(
+        List(Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White))
+      ))
+      assert(board.nextCell(1, 0) == Cell(White))
     }
     it("existence2") {
-      assert(board2.nextCell(0, 0) == Cell(White))
+      val board = Board(List(
+        List(Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(Black), Cell(Black), Cell(Black))
+      ))
+      assert(board.nextCell(0, 0) == Cell(White))
     }
     it("existence3") {
-      assert(board1.nextCell(2, 2) == Cell(White))
+      val board = Board(List(
+        List(Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White))
+      ))
+      assert(board.nextCell(2, 2) == Cell(White))
     }
     it("depopulation0") {
       val board = Board(List(
@@ -101,6 +106,14 @@ class BoardSpec extends FunSpec {
         List(Cell(Black), Cell(Black), Cell(White))
       ))
       assert(board.nextCell(0, 1) == Cell(Black))
+    }
+    it("overcrowded") {
+      val board = Board(List(
+        List(Cell(Black), Cell(Black), Cell(Black)),
+        List(Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(Black), Cell(White))
+      ))
+      assert(board.nextCell(1, 1) == Cell(Black))
     }
   }
 

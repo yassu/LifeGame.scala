@@ -41,6 +41,8 @@ case class Board(cells: List[List[Cell]]) {
       Cell(White)
     else if (cells(y)(x).isAlive && numberOfAlivedNeighborCells(y, x) <= 1)
       Cell(Black)
+    else if (cells(y)(x).isAlive && numberOfAlivedNeighborCells(y, x) >= 4)
+      Cell(Black)
     else cells(y)(x)
 
   override def toString: String =
