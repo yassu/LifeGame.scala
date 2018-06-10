@@ -3,39 +3,39 @@ package lifegame.sampleboards
 import org.scalatest.FunSpec
 
 class SampleBoardsSpec extends FunSpec {
-  describe("blockBoard.cycle") {
+  it("blockBoard.cycle") {
     assert(SampleBoards.blockBoard.isFixed())
   }
 
-  describe("beehive") {
+  it("beehive") {
     assert(SampleBoards.beehive.isFixed())
   }
 
-  describe("boat") {
+  it("boat") {
     assert(SampleBoards.boat.isFixed())
   }
 
-  describe("ship") {
+  it("ship") {
     assert(SampleBoards.ship.isFixed())
   }
 
-  describe("pond") {
+  it("pond") {
     assert(SampleBoards.pond.isFixed())
   }
 
-  describe("blinker") {
+  it("blinker") {
     assert(SampleBoards.blinker.cycle() == 2)
   }
 
-  describe("toad") {
+  it("toad") {
     assert(SampleBoards.toad.cycle() == 2)
   }
 
-  describe("beacon") {
+  it("beacon") {
     assert(SampleBoards.beacon.cycle() == 2)
   }
 
-  describe("clock") {
+  it("clock") {
     assert(SampleBoards.clock.cycle() == 2)
   }
 }
