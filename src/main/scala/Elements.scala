@@ -21,6 +21,16 @@ case class Cell(color: Color) {
 
 case class Board(cells: List[List[Cell]]) {
   def getCell(y: Int, x: Int): Cell = cells(y)(x)
+  def putCell(cell: Cell, t: (Int, Int)): Board = Board(
+    (
+      for(y <- (0 until cells.length)) yield(
+        (
+          for(x <- (0 until cells.head.length))
+              yield if (t._1 == y && t._2 == x) cell else cells(y)(x)
+        ).toList
+      )
+    ).toList
+  )
   def size: (Int, Int) = (this.cells(0).size, this.cells.size)
 
   def numberOfAlivedNeighborCells(y: Int, x: Int): Int = {
