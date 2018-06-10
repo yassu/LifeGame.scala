@@ -45,6 +45,14 @@ case class Board(cells: List[List[Cell]]) {
       Cell(Black)
     else cells(y)(x)
 
+  def nextBoard: Board = Board(
+    (
+      for (y <- (0 until cells.length)) yield (
+        for (x <- (0 until cells.head.length)) yield this.nextCell(y, x)
+      ).toList
+    ).toList)
+
+
   override def toString: String =
     (for (y <- (0 until cells.length)) yield (
       for (x <- (0 until cells.head.length)) yield cells(y)(x).colorChar

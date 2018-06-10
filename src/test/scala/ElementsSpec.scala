@@ -117,6 +117,35 @@ class BoardSpec extends FunSpec {
     }
   }
 
+  describe("nextBoard") {
+    it("Block") {
+      val blockBoard = Board(List(
+        List(Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(White), Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White), Cell(White))
+      ))
+      assert(blockBoard.nextBoard == blockBoard)
+    }
+    it("blinker") {
+      val blinkerBoard = Board(List(
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+      ))
+      val blinkerNextBoard = Board(List(
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(Black), Cell(White), Cell(White)),
+        List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+      ))
+      assert(blinkerBoard.nextBoard == blinkerNextBoard)
+    }
+  }
+
   it("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),
