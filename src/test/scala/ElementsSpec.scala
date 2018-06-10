@@ -158,14 +158,6 @@ class BoardSpec extends FunSpec {
     }
   }
 
-  it("emptyBoard") {
-    val resultBoard = Board(List(
-      List(Cell(White), Cell(White), Cell(White)),
-      List(Cell(White), Cell(White), Cell(White)),
-    ))
-    assert(Board.emptyBoard((3, 2)) == resultBoard)
-  }
-
   it("toString") {
     assert(Board(List(
         List(Cell(Black), Cell(Black), Cell(White)),
@@ -176,5 +168,13 @@ class BoardSpec extends FunSpec {
       "■□□\n" +
       "□□□"
     )
+  }
+
+  it("emptyBoard") {
+    val resultBoard = Board(List(
+      List(Cell(White), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White)),
+    ))
+    assert(Board.emptyBoard((3, 2)) == resultBoard)
   }
 }
