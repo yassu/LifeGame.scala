@@ -76,6 +76,20 @@ case class Board(cells: List[List[Cell]]) {
       ).toList
     ).toList)
 
+  def cycle(maxCycleCount: Int = 10): Int ={
+    var count = 0
+    var board = this
+    while (count < maxCycleCount) {
+      count += 1
+      board = board.nextBoard
+
+      if (this == board) {
+        return count
+      }
+    }
+
+    0
+  }
 
   override def toString: String =
     (for (y <- (0 until cells.length)) yield (

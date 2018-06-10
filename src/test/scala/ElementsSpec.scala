@@ -1,6 +1,7 @@
 package lifegame.elements
 
 import org.scalatest.FunSpec
+import lifegame.sampleboards.SampleBoards
 
 class ColorSpec extends FunSpec {
   describe("Color object should be initialized.") {
@@ -171,6 +172,28 @@ class BoardSpec extends FunSpec {
         List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
       ))
       assert(blinkerBoard.nextBoard == blinkerNextBoard)
+    }
+  }
+
+  describe("cycle") {
+    it("blockBoard has one cycle with default maxCycleCount parameter") {
+      assert(SampleBoards.blockBoard.cycle() == 1)
+    }
+
+    it("blockBoard has zero cycle with maxCycleCount = 0") {
+      assert(SampleBoards.blockBoard.cycle(0) == 0)
+    }
+    it("blockBoard has one cycle3 with maxCycleCount = 1") {
+      assert(SampleBoards.blockBoard.cycle(1) == 1)
+    }
+
+    it("blinkerBoard has zero cycle with maxCycleCount = 0") {
+      assert(SampleBoards.blinkerBoard.cycle(0) == 0)
+    }
+    it("compute cycle of blinkerBoard") {
+      var board = SampleBoards.blinkerBoard
+      assert(SampleBoards.blinkerBoard.cycle(1) == 0)
+      assert(SampleBoards.blinkerBoard.cycle(2) == 2)
     }
   }
 
