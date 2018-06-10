@@ -31,6 +31,20 @@ case class Board(cells: List[List[Cell]]) {
       )
     ).toList
   )
+  def putBoard(other: Board, t: (Int, Int)) = Board(
+    (
+      for (y <- (0 until cells.length)) yield(
+        (
+          for (x <- (0 until cells.head.length))
+            yield
+              if (x >= t._2 && x < t._2 + other.size._2 &&
+                y >= t._1 && y < t._1 + other.size._1)
+                  other.getCell(y - t._1, x - t._2)
+              else this.getCell(y, x)
+        ).toList
+      )
+    ).toList
+  )
   def size: (Int, Int) = (this.cells(0).size, this.cells.size)
 
   def numberOfAlivedNeighborCells(y: Int, x: Int): Int = {

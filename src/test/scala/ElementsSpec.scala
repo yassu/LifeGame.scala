@@ -59,6 +59,23 @@ class BoardSpec extends FunSpec {
     assert(board.putCell(Cell(Black), (1, 2)) == resultBoard)
   }
 
+  it("putBoard") {
+    val board = Board.emptyBoard((6, 5))
+    val blockBoard = Board(List(
+      List(Cell(Black), Cell(Black)),
+      List(Cell(Black), Cell(Black))
+    ))
+    val resultBoard = Board(List(
+      List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+      List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    ))
+    println(resultBoard)
+    assert(board.putBoard(blockBoard, (1, 2)) == resultBoard)
+  }
+
   describe("size") {
     val board = Board(List(
       List(Cell(Black), Cell(White), Cell(White)),
