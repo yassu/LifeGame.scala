@@ -69,3 +69,17 @@ case class Board(cells: List[List[Cell]]) {
     ).mkString("")).mkString("\n")
 
 }
+
+object Board {
+  def emptyBoard(size: (Int, Int)): Board =
+    Board(
+      (
+        for (y <- (0 until size._2)) yield (
+          (
+            for (x <- (0 until size._1)) yield Cell(White)
+          ).toList
+        )
+      ).toList
+    )
+}
+
