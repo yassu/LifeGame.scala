@@ -26,4 +26,8 @@ class SampleBoardsSpec extends FunSpec {
   describe("blinker") {
     assert(SampleBoards.blinker.cycle() == 2)
   }
+
+  describe("toad") {
+    assert(SampleBoards.toad.cycle() == 2)
+  }
 }

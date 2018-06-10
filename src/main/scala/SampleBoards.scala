@@ -51,4 +51,12 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
 
+  def toad: Board = Board(List(
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White)),
+    List(Cell(White), Cell(Black), Cell(Black), Cell(Black), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+  ))
 }
