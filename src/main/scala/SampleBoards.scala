@@ -59,4 +59,20 @@ object SampleBoards {
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
     List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
   ))
+
+  def beacon: Board = Board(List(
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(Black), Cell(Black), Cell(White), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(Black), Cell(Black), Cell(White)),
+    List(Cell(White), Cell(White), Cell(White), Cell(White), Cell(White), Cell(White)),
+  ))
+
+  def clock: Board = Board(List(
+    List(Cell(White), Cell(Black), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(Black), Cell(Black)),
+    List(Cell(Black), Cell(Black), Cell(White), Cell(White)),
+    List(Cell(White), Cell(White), Cell(Black), Cell(White)),
+  ))
 }

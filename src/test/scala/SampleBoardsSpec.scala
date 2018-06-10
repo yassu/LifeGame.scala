@@ -30,4 +30,12 @@ class SampleBoardsSpec extends FunSpec {
   describe("toad") {
     assert(SampleBoards.toad.cycle() == 2)
   }
+
+  describe("beacon") {
+    assert(SampleBoards.beacon.cycle() == 2)
+  }
+
+  describe("clock") {
+    assert(SampleBoards.clock.cycle() == 2)
+  }
 }
