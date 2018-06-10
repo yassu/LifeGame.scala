@@ -2,18 +2,18 @@ package lifegame.elements
 
 sealed trait Color
 
-case object Black extends Color
 case object White extends Color
+case object Black extends Color
 
 case class Cell(color: Color) {
   def colorChar: Char = color match {
-    case Black => '■'
     case White => '□'
+    case Black => '■'
   }
 
   def isAlive: Boolean = color match {
-    case Black => false
-    case White => true
+    case White => false
+    case Black => true
   }
 
   def isDead: Boolean = ! isAlive
@@ -36,13 +36,13 @@ case class Board(cells: List[List[Cell]]) {
   }
 
   def nextCell(y: Int, x: Int) =
-    if (cells(y)(x).isDead && numberOfAlivedNeighborCells(y, x) == 3) Cell(White)
+    if (cells(y)(x).isDead && numberOfAlivedNeighborCells(y, x) == 3) Cell(Black)
     else if (cells(y)(x).isAlive && Set(2, 3).contains(numberOfAlivedNeighborCells(y, x)))
-      Cell(White)
+      Cell(Black)
     else if (cells(y)(x).isAlive && numberOfAlivedNeighborCells(y, x) <= 1)
-      Cell(Black)
+      Cell(White)
     else if (cells(y)(x).isAlive && numberOfAlivedNeighborCells(y, x) >= 4)
-      Cell(Black)
+      Cell(White)
     else cells(y)(x)
 
   def nextBoard: Board = Board(
