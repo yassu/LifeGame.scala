@@ -38,8 +38,10 @@ case class Board(cells: List[List[Cell]]) {
   def nextCell(y: Int, x: Int) =
     if (cells(y)(x).isDead && numberOfAlivedNeighborCells(y, x) == 3) Cell(White)
     else if (cells(y)(x).isAlive && Set(2, 3).contains(numberOfAlivedNeighborCells(y, x)))
-        Cell(White)
-    else Cell(Black)
+      Cell(White)
+    else if (cells(y)(x).isAlive && numberOfAlivedNeighborCells(y, x) <= 1)
+      Cell(Black)
+    else cells(y)(x)
 
   override def toString: String =
     (for (y <- (0 until cells.length)) yield (

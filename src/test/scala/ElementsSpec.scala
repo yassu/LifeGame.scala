@@ -88,6 +88,20 @@ class BoardSpec extends FunSpec {
     it("existence3") {
       assert(board1.nextCell(2, 2) == Cell(White))
     }
+    it("depopulation0") {
+      val board = Board(List(
+        List(Cell(Black), Cell(Black), Cell(Black)),
+        List(Cell(Black), Cell(Black), Cell(White))
+      ))
+      assert(board.nextCell(1, 0) == Cell(Black))
+    }
+    it("depopulation1") {
+      val board = Board(List(
+        List(Cell(Black), Cell(White), Cell(Black)),
+        List(Cell(Black), Cell(Black), Cell(White))
+      ))
+      assert(board.nextCell(0, 1) == Cell(Black))
+    }
   }
 
   it("toString") {
